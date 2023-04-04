@@ -1,12 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: black;
     color: white;
     margin: 0;
-    font-family: 'Inter', sans-serif;
-}
-
-*{
-    box-sizing: border-box;
+    font-family:monospace;
 }
 
 .container{
@@ -18,18 +18,18 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 10px;
+    grid-column-gap: 7px;
     grid-row-gap: 0px;
-    gap: 20px;
+    gap: 10px;
     padding: 0;
 
 }
 .input-container input{
-    background-color: black;
+    background-color: inherit;
     border: 1px solid lightgray;
     height: 35px;
     padding-left: 10px;
-    width: 370px;
+    width:100%;
     color: lightgray;
 }
 
@@ -65,10 +65,6 @@ td{
     border: 1px solid lightgray;
 }
 
-tbody{
-    height: auto;
-}
-
 .search{
     width:100%;
     background-color: black;
@@ -94,28 +90,3 @@ tbody{
     margin-top: 30px;
 }
 
-/* For screens smaller than 800px */
-@media (max-width: 800px) {
-    /* CSS styles here */
-    body {
-      font-size: 14px;
-    }
-    .container {
-      margin: 10px;
-      overflow-x: hidden;
-    }
-    .input-container {
-      grid-template-columns: repeat(1, 1fr);
-      grid-row-gap: 10px;
-    }
-    .input-container input {
-      width: 100%;
-    }
-    .table {
-      font-size: 10px;
-    }
-    .search, .button button {
-      width: 100%;
-      margin: 10px 0px;
-    }
-}
