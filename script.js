@@ -9,23 +9,19 @@ function addStudent() {
     const gradeValue = document.getElementById('grade').value;
     const degreeValue = document.getElementById('degree').value;
 
-    //Inputs Mandatory, Blank will not be submitted.
     if (nameValue == '' || emailValue == '' || ageValue == '' || gradeValue == '' || degreeValue == "") {
         alert("All fields are required!")
         return;
     }
 
-    //Iterate the ID
     count++;
 
     students.push({
         ID: count, name: nameValue, email: emailValue, age: ageValue, grade: gradeValue, degree: degreeValue
     });
 
-    // Store the updated students array in local storage
     localStorage.setItem("students", JSON.stringify(students));
-
-    // Clear the input fields   
+   
     document.getElementById('name').value = "";
     document.getElementById('email').value = "";
     document.getElementById('age').value = "";
@@ -75,7 +71,6 @@ function showTable() {
                     student[key]
                 }
                 </div> <div class="icons"><a onClick="edit(${student['ID']})" class='fa'>&#xf044;</a> <a onClick="del(${student['ID']})" class='fa'>&#xf1f8;</a> </div> `;
-            // degree.innerHTML = student[key] + "  <li class='fa'>&#xf044;</li>";
 
             row.appendChild(id);
             row.appendChild(name);
@@ -95,7 +90,6 @@ function search() {
     table = document.getElementById("tbody");
     tr = table.getElementsByTagName("tr");
 
-    // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         td1 = tr[i].getElementsByTagName("td")[2];
